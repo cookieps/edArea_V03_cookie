@@ -1,0 +1,30 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                  controllers.Application.index()
+
+GET         /login                             controllers.Application.login()
+POST        /login                             controllers.Application.authenticate()
+GET         /logout                            controllers.Application.logout()
+
+GET         /registration                      controllers.Application.registration()
+POST        /registration                      controllers.Application.addUser()
+
+GET         /creatingCourse                    controllers.Courses.creatingCourse()
+POST        /addingCourse                      controllers.Courses.add()
+GET         /courses                           controllers.Courses.showCourses()
+
+POST        /image/upload                      controllers.Courses.uploadFile()
+
+GET         /id                                controllers.Courses.showCoursePage(id)
+
+GET         /user/:id                      controllers.Users.showUserPage(id : Long)
+
+
+
+# доступ к файлам на сервере
+GET         /assets/*file                      controllers.Assets.at(path="/public", file)
+
+
